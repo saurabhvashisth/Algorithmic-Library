@@ -33,14 +33,12 @@ void update(int l,int r,int val,int L,int R,int id){
 		seg[id]+=val;
 		return;
 	}
-	if(L!=R && push[id])
-		pusher(id);
+	if(L!=R && push[id]) pusher(id);
 	int m=(L+R)>>1;
 	if(!(r<L || m<l))
 		update(l,r,val,L,m,id<<1); 
 	if(!(r<m+1 || R<l))
 		update(l,r,val,m+1,R,id<<1|1); 
-
 	seg[id]=seg[id<<1]+seg[id<<1|1]; 
 }
 
@@ -59,8 +57,7 @@ int output(int l,int r,int L,int R,int id){
 	return x+y;
 }
 
-int main()
-{
+int main() {
 	int n,q;
 	scanf("%d%d",&n,&q);
 	for(int i=0;i<n;i++)
