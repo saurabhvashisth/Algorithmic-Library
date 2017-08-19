@@ -49,7 +49,7 @@ void aux_tree(){
 		aux[S.top()].push_back({vert[i],dist[vert[i]]-dist[S.top()]});
 		S.push(vert[i]);
 	}
-	while(!S.empty())S.pop();
+//	while(!S.empty())S.pop(); // IF MLE
 }
 
 int main(){
